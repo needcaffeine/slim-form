@@ -38,6 +38,8 @@ class Reader {
         if (!self::$_namespaceAdded) {
             $directory = realpath(__DIR__.DIRECTORY_SEPARATOR.'..');
             \Doctrine\Common\Annotations\AnnotationRegistry::registerAutoloadNamespace('SlimForm', $directory);
+
+            \Slim\Extras\Views\Twig::$twigTemplateDirs[] = realpath($directory . DIRECTORY_SEPARATOR . 'templates');
             self::$_namespaceAdded = true;
         }
         self::$_reader = $reader;

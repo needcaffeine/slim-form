@@ -6,7 +6,7 @@ class Select extends Element {
 
     protected $_options;
 
-    protected $_defaultTemplateFile = '/partial/form/select.twig';
+    protected $_defaultTemplateFile = '/slimform/partial/form/select.twig';
     public function __construct($name, $config) {
         parent::__construct($name, $config);
         $this->_tag = 'select';

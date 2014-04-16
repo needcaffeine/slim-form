@@ -90,7 +90,7 @@ class Element {
      * Default template file
      * @var
      */
-    protected $_defaultTemplateFile = '/partial/form/element.twig';
+    protected $_defaultTemplateFile = '/slimform/partial/form/element.twig';
 
     /**
      * @var
