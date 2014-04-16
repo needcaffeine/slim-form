@@ -16,7 +16,6 @@
 		"php": ">=5.4.0",
 		"slim/slim": "2.3.*",
 		"slim/views": "0.1.*",
-		"slim/extras": "*",
 		"twig/twig": "*",
 		"doctrine/common": "*",
 		"doctrine/orm": "*",

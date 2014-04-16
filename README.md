@@ -17,3 +17,5 @@ These filters are found in the following class
 `\SlimForm\Twig\Extension\Filters::getInstance()->getFilters()`
 
 Add the array of simple twig filters to an existing view extension as needed.
+
+Finally, you will need to use \SlimForm\View as your application's view class in order to include the proper twig templates for rendering the slim form elements. This file is an extension of \Slim\View amd may be extended the same way. The only difference is that it allows for multiple directories to be used when rendering views.
