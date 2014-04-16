@@ -4,22 +4,22 @@
 	"description": "This library provides a way of annotating Doctrine Entities to be rendered as forms",
 	"license": "GPL",
     	"authors": [
-        	{
-            		"name": "John Foushee",
-            		"email": "johnfoushee@gmail.com",
-            		"homepage": "http://johnfoushee.com",
-            		"role": "Developer"
-        	}
+            {
+                "name": "John Foushee",
+                "email": "johnfoushee@gmail.com",
+            	"homepage": "http://johnfoushee.com",
+            	"role": "Developer"
+            }
     	],
 	"require": {
 		"php": ">=5.4.0",
-		"slim/slim": "2.3.5",
-		"slim/views": "0.1.2",
-		"slim/extras": "2.0.3",
-		"twig/twig": "v1.15.1",
-		"doctrine/common": "v2.4.1",
-		"doctrine/orm": "v2.4.1",
-		"doctrine/annotations": "1.1.2"
+		"slim/slim": "2.3.*",
+		"slim/views": "0.1.*",
+		"slim/extras": "*",
+		"twig/twig": "v1.15.*",
+		"doctrine/common": "v2.*",
+		"doctrine/orm": "v2.*",
+		"doctrine/annotations": "*"
 	},
 	"autoload": {
 		"psr-0" : {
