@@ -6,6 +6,6 @@ class Button extends Element {
         $this->_config['noLabel'] = true;
         parent::__construct($name,$config);
         $this->_tag = 'button';
-        $this->_defaultTemplateFile = 'partial/form/button.twig';
+        $this->_defaultTemplateFile = 'slimform/partial/form/button.twig';
     }
 }
