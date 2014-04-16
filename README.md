@@ -5,17 +5,11 @@ This library brings together the Doctrine Annotation library to turn a Doctrine 
 
 Setup
 ===
+In your bootstrap file, configure the Doctrine entity manager and Twig View class provided by Slim, then invoke the SlimForm bootstrap's setup functions:
 
-In your bootstrap file (for Slim Framework it is index.php) set the SlimForm\Reader class with an annotation reader the same as your entity manager uses. (implements \Doctrine\Common\Annotations\Reader interface)
+`\SlimForm\Bootstrap::getInstance()
+     ->setAnnotationReader($annotationReader)
+     ->setView($view);`
 
-`\SlimForm\Reader::setAnnotationReader($entityManagerAnnotationReader);`
 
-Additionally, you will need to register filters with your existing application.
-
-These filters are found in the following class
-
-`\SlimForm\Twig\Extension\Filters::getInstance()->getFilters()`
-
-Add the array of simple twig filters to an existing view extension as needed.
-
-Finally, you will need to use \SlimForm\View as your application's view class in order to include the proper twig templates for rendering the slim form elements. This file is an extension of \Slim\View amd may be extended the same way. The only difference is that it allows for multiple directories to be used when rendering views.
+This will add the necessary template directory and twig extensions to the view object and set up the appropriate annotation readers for Doctrine.

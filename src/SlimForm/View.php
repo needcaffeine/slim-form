@@ -1,7 +1,9 @@
 <?php
 namespace SlimForm;
 
-class View extends \Slim\View {
+use Slim\Views\Twig as TwigView;
+
+class View extends TwigView {
 
     public function setTemplatesDirectory($directory) {
         parent::setTemplatesDirectory($directory);
