@@ -1,0 +1,19 @@
+{
+	"name": "fousheezy/slim-form",
+	"description": "This library provides a way of annotating Doctrine Entities to be rendered as forms",
+	"require": {
+		"php": ">=5.4.0",
+		"slim/slim": "2.3.5",
+		"slim/views": "0.1.2",
+		"slim/extras": "2.0.3",
+		"twig/twig": "v1.15.1",
+		"doctrine/common": "v2.4.1",
+		"doctrine/orm": "v2.4.1",
+		"doctrine/annotations": "1.1.2"
+	},
+	"autoload": {
+		"psr-0" : {
+			"SlimForm" : "src"
+		}
+	}
+}
