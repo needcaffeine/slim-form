@@ -2,7 +2,7 @@
 	"name": "fousheezy/slim-form",
 	"type": "library",
 	"description": "This library provides a way of annotating Doctrine Entities to be rendered as forms",
-	"license": "GPL",
+	"license": "GPL-2.0+",
     	"authors": [
             {
                 "name": "John Foushee",
@@ -16,9 +16,9 @@
 		"slim/slim": "2.3.*",
 		"slim/views": "0.1.*",
 		"slim/extras": "*",
-		"twig/twig": "v1.15.*",
-		"doctrine/common": "v2.*",
-		"doctrine/orm": "v2.*",
+		"twig/twig": "*",
+		"doctrine/common": "*",
+		"doctrine/orm": "*",
 		"doctrine/annotations": "*"
 	},
 	"autoload": {
