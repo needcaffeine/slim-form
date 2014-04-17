@@ -7,6 +7,8 @@ use SlimForm\Validator\ValidatorInterface;
 
 class Element {
 
+    const ELEMENT_VIEW_VAR = 'element';
+
     private static $_view;
 
     /**
@@ -288,26 +290,28 @@ class Element {
      */
     protected function _getView() {
         if (empty(self::$_view)) {
-            self::$_view = new \Slim\Views\Twig();
-            $config = require 'config.php';
-            self::$_view->parserOptions = $config['twig'];
-            self::$_view->parserExtensions = array(
-                new \Slim\Views\TwigExtension(),
-                new \App\Twig\Extension\App(),
-            );
-            self::$_view->setTemplatesDirectory($config['slim']['templates.path']);
+            self::$_view = \SlimForm\Bootstrap::getInstance()->getView();
         }
         return self::$_view;
     }
 
+    /**
+     * Like a ninja, replace the element variable with this element, render the view, then put everything back the way it was
+     * @return string
+     */
     public function render() {
         $view = $this->_getView();
-        $view->clear();
-        $view->set('element', $this);
+        if ($view->has(self::ELEMENT_VIEW_VAR)) {
+            $oldElement = $view->get(self::ELEMENT_VIEW_VAR);
+        }
+        $view->set(self::ELEMENT_VIEW_VAR, $this);
         $templateFile = $this->config('template') ? $this->config('template') : $this->_defaultTemplateFile;
         $beforeTemplateFile = $this->config('beforeTemplate');
         $afterTemplateFile = $this->config('afterTemplate');
-        return (empty($beforeTemplateFile) ? '' : $view->render($beforeTemplateFile)).$view->render($templateFile).(empty($afterTemplateFile) ? '' : $view->render($afterTemplateFile));
+        $output = (empty($beforeTemplateFile) ? '' : $view->render($beforeTemplateFile)).$view->render($templateFile).(empty($afterTemplateFile) ? '' : $view->render($afterTemplateFile));
+        // return value to prior state
+        $view->set(self::ELEMENT_VIEW_VAR, isset($oldElement) ? $oldElement : null);
+        return $output;
     }
 
     public function config($key, $value = null) {
