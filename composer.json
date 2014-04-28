@@ -14,7 +14,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.4.0",
-		"slim/slim": "2.3.*",
+		"slim/slim": ">=2.3.0",
 		"slim/views": "0.1.*",
 		"twig/twig": "*",
 		"doctrine/common": "*",
