@@ -1,5 +1,5 @@
 {
-	"name": "fousheezy/slim-form",
+	"name": "needcaffeine/slim-form",
 	"type": "library",
 	"description": "This library provides a way of annotating Doctrine Entities to be rendered as forms",
 	"license": "GPL-2.0+",
@@ -14,7 +14,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.4.0",
-		"slim/slim": "2.3.*",
+		"slim/slim": "2.4.*",
 		"slim/views": "0.1.*",
 		"twig/twig": "*",
 		"doctrine/common": "*",
